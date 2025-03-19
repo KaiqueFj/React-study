@@ -9,6 +9,7 @@ import Settings from "./pages/Settings";
 import Account from "./pages/Account";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
+import Users from "./pages/Users";
 import AppLayout from "./ui/AppLayout";
 import { Toaster } from "react-hot-toast";
 import Booking from "./pages/Booking";
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="checkIn/:bookingId" element={<CheckIn />} />
             <Route path="cabins" element={<Cabins />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="users" element={<Users />} />
             <Route path="account" element={<Account />} />
           </Route>
 
