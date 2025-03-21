@@ -86,6 +86,7 @@ function Menus({ children }) {
 
 function Toggle({ id }) {
   const { open, close, openId, setPosition } = useContext(MenusContext);
+  [];
   function handleClick(e) {
     e.stopPropagation();
 
@@ -106,6 +107,7 @@ function Toggle({ id }) {
 }
 function List({ id, children }) {
   const { openId, position } = useContext(MenusContext);
+
   const ref = useOutsideClickJS(() => {
     close();
   }, false);
