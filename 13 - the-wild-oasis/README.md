@@ -76,7 +76,7 @@ Utilize available tools for efficient hotel management.
 
 ## Deployment
 
-The Wild Oasis is depoloyed and available at [the-wild-oasis.vercel.app](https://the-wild-oasis-fjbooking.netlify.app/login).
+The Wild Oasis is depoloyed and available at [the-wild-oasis.vercel.app](https://the-wild-oasis-fjbooking.netlify.app/).
 
 ## Images
 
