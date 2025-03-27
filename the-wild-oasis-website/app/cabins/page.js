@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import CabinCard from "@/app/_components/CabinCard";
+import { getCabins } from "../_lib/data-service";
 
 export const metadata = {
   title: "Cabins",
 };
 
-export default function page() {
-  const cabins = [];
+export default async function page() {
+  const cabins = await getCabins();
 
   return (
     <div>
