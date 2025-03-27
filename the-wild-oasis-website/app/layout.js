@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
         className={` ${josefinFont.className} relative  min-h-screen antialiased bg-primary-950 flex flex-col text-primary-100`}
       >
         <Header />
-        <div className="flex-1 px-8 py-12">
-          <main className="mx-auto max-w-7xl ">{children}</main>
+        <div className="grid flex-1 px-8 py-12">
+          <main className="w-full mx-auto max-w-7xl ">{children}</main>
         </div>
       </body>
     </html>
