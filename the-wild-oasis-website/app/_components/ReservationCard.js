@@ -2,6 +2,7 @@ import { PencilSquareIcon } from "@heroicons/react/24/solid";
 import { format, formatDistance, isPast, isToday, parseISO } from "date-fns";
 import DeleteReservation from "./DeleteReservation";
 import Image from "next/image";
+import Link from "next/link";
 
 export const formatDistanceFromNow = (dateStr) =>
   formatDistance(parseISO(dateStr), new Date(), {
@@ -28,6 +29,7 @@ function ReservationCard({ booking }) {
         <Image
           src={image}
           alt={`Cabin ${name}`}
+          fill
           className="object-cover border-r border-primary-800"
         />
       </div>
@@ -69,14 +71,18 @@ function ReservationCard({ booking }) {
       </div>
 
       <div className="flex flex-col border-l border-primary-800 w-[100px]">
-        <a
-          href={`/account/reservations/edit/${id}`}
-          className="flex items-center flex-grow gap-2 px-3 text-xs font-bold uppercase transition-colors border-b group text-primary-300 border-primary-800 hover:bg-accent-600 hover:text-primary-900"
-        >
-          <PencilSquareIcon className="w-5 h-5 transition-colors text-primary-600 group-hover:text-primary-800" />
-          <span className="mt-1">Edit</span>
-        </a>
-        <DeleteReservation bookingId={id} />
+        {!isPast(startDate) ? (
+          <>
+            <Link
+              href={`/account/reservations/edit/${id}`}
+              className="flex items-center flex-grow gap-2 px-3 text-xs font-bold uppercase transition-colors border-b group text-primary-300 border-primary-800 hover:bg-accent-600 hover:text-primary-900"
+            >
+              <PencilSquareIcon className="w-5 h-5 transition-colors text-primary-600 group-hover:text-primary-800" />
+              <span className="mt-1">Edit</span>
+            </Link>
+            <DeleteReservation bookingId={id} />
+          </>
+        ) : null}
       </div>
     </div>
   );
