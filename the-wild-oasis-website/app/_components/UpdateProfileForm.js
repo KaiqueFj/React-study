@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { UpdateGuest } from "../_lib/actions";
 import { useFormStatus } from "react-dom";
 
@@ -32,13 +33,16 @@ export default function UpdateProfileForm({ guest, children }) {
       </div>
 
       <div className="space-y-2">
-        <div className="flex items-center justify-between">
+        <div className="relative flex items-end justify-between">
           <label htmlFor="nationality">Where are you from?</label>
-          <img
-            className="w-5 h-5 rounded-sm"
-            src={countryFlag}
-            alt="Country flag"
-          />
+          <div className="relative w-10 h-10">
+            <Image
+              className="rounded-sm"
+              src={countryFlag}
+              alt="Country flag"
+              fill
+            />
+          </div>
         </div>
         {children}
       </div>
