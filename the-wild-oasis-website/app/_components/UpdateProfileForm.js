@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { UpdateGuest } from "../_lib/actions";
-import { useFormStatus } from "react-dom";
+import Button from "./SubmitButton";
 
 export default function UpdateProfileForm({ guest, children }) {
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
@@ -57,21 +57,8 @@ export default function UpdateProfileForm({ guest, children }) {
       </div>
 
       <div className="flex items-center justify-end gap-6">
-        <Button />
+        <Button pendingLabel="updating...">Update Profile</Button>
       </div>
     </form>
-  );
-}
-
-function Button() {
-  const { pending } = useFormStatus();
-
-  return (
-    <button
-      disabled={pending}
-      className="px-8 py-4 font-semibold transition-all bg-accent-500 text-primary-800 hover:bg-accent-600 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-    >
-      {pending ? "updating..." : "Update profile"}
-    </button>
   );
 }
